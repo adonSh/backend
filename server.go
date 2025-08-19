@@ -23,5 +23,5 @@ func main() {
 }
 
 func (b *Backend) defaultHandler(w http.ResponseWriter, r *http.Request) {
-    w.Write([]byte("ok\n"))
+    w.Write([]byte("okie dokie\n"))
 }
