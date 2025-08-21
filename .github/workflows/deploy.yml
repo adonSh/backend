@@ -19,7 +19,7 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_rsa -p ${{ secrets.REMOTE_PORT }} ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} << ENDSSH
             cd backend
-            git pull github trunk
+            git pull origin trunk
             go build backend
           ENDSSH
   deploy:
