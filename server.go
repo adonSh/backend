@@ -1,9 +1,11 @@
 package main
 
 import (
+    "fmt"
     "log"
     "net/http"
     "os"
+    "time"
 )
 
 type Backend struct {
@@ -23,5 +25,6 @@ func main() {
 }
 
 func (b *Backend) defaultHandler(w http.ResponseWriter, r *http.Request) {
-    w.Write([]byte("okie dokie\n"))
+    timestamp := time.Now().UTC().Add(5 * time.Minute)
+    fmt.Fprintf(w, "%d\n", timestamp.Unix())
 }
